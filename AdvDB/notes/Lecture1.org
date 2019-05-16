@@ -1,0 +1,13 @@
+* Rules of DB design
+** 1. all tables must have a primary key and the primary key must be null
+** 2. foreign key must match the value of the primary key in the parent table 
+** 3. Single themed tables
+* In a historical tracking system we need,
+** 3 rules of DB design
+** time variant table (logging/tracking)
+child table, always
+** ex: 
+  | Employee Table | Employee History Table |
+  | emp_id PK      | emp_id FK              |
+  |                | Time stamps            |
+** time stamps

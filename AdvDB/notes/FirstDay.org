@@ -1,0 +1,6 @@
+* 5 rules to write down
+1. Take two DB classes
+2. Web App development
+3. 2 semesters of programming
+4. 2 courses in networking
+5. 2 courses in secruity
