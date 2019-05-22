@@ -31,7 +31,7 @@ order by emp_id, eht_date.
 
 --  test
 -- #4
-
+-- xx
 START TRANSACTION;
     select * from job;
     UPDATE job set job_title='owner' WHERE job_id=1;
