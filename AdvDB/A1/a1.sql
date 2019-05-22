@@ -29,5 +29,11 @@ order by emp_id, eht_date.
 
 -- #3
 
-
+--  test
 -- #4
+
+START TRANSACTION;
+    select * from job;
+    UPDATE job set job_title='owner' WHERE job_id=1;
+    select * from job;
+COMMIT;
