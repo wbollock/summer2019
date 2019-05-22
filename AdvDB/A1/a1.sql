@@ -22,7 +22,7 @@ order by emp_id, eht_date.
 select e.emp_id, emp_fname, emp_lname, DATE_FORMAT(eht_date,'%m%/%d%/%y %h:%i:%p')
 as formatted_date, eht_job, job_title, eht_emp_salary, ehT_notes
 from employee e, emp_hist h, job j
-where e.emp_id = h.emp_id
+where e.emp_id = h.emp_idgit p
     and eht_job_id = j.job_id
 order by emp_id, eht_date.
     
