@@ -1,0 +1,95 @@
+﻿1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+A character set is a set of symbols and encodings.
+A collation is a set of rules for comparing characters in a character set.
+Suppose that we have an alphabet with four letters: "A", "B", "a", "b".
+We give each letter a number: "A" = 0, "B" = 1, "a" = 2, "b" = 3.
+The letter "A" is a symbol, the number 0 is the encoding for "A",
+and the combination of all four letters and their encodings is a character set.
+Suppose that we want to compare two string values, "A" and "B".
+The simplest way to do this is to look at the encodings: 0 for "A" and 1 for "B".
+Because 0 is less than 1, we say "A" is less than "B". What we've just done is apply a collation to our character set. The collation is a set of rules (only one rule in this case): "compare the encodings."
+We call this simplest of all possible collations a binary collation.
+http://dev.mysql.eom/doc/refman/5.5/en/charset.hjmiLl
+7
+— set foreign_key_checks=0;
+drop database if exists mjowett; create database if not exists mjowett; use mjowett;
+— Table company
+DROP TABLE IF EXISTS company;
+CREATE TABLE IF NOT EXISTS company
+(
+cmpjd INT UNSIGNED NOT NULL AUTO_INCREMENT,
+cmp_type enum('C-Corp','S-Corp','Non-Profit-Corp','LLC','Partnership'),
+cmp_street VARCHAR(30) NOT NULL,
+cmp_city VARCHAR(30) NOT NULL,
+cmp_state CHAR(2) NOT NULL,
+cmp_zip int(9) unsigned ZEROFILL NOT NULL COMMENT 'no dashes',
+cmp_phone bigint unsigned NOT NULL COMMENT 'ssn and zip codes can be zero-filled, but not US area codes',
+cmp_ytd_sales DECIMAL(10,2) unsigned NOT NULL COMMENT '12,345,678.90',
+cmp_email VARCHAR(IOO) NULL,
+cmp_url VARCHAR(IOO) NULL,
+cmp_notes VARCHAR(255) NULL,
+PRIMARY KEY (cmpjd)
+)
+ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_general_d;
+SHOW WARNINGS;
+INSERT INTO company VALUES
+(null,'C-Corp','507 - 20th Ave. E. Apt. 2A','Seattle','WA','081226749','2065559857','12345678.00',null,'http://www.http://technologies.ci.fsu.edu/node/72','company notesl'), (null,'S-Corp','908 W. Capital Way','Tacoma','WA','004011298','2065559482','9945678.00',null,'http://www.qcitr.com','company notes2'),
+(null,'Non-Profit-Corp','722 Moss Bay Blvd.','Kirkland','WA','000337845','2065553412','1345678.00',null,'http://www.markjowett.com','company notes3'),
+(null,'LLC','4110 Old Redmond Rd.','Redmond','WA','000029021','2065558122','678345.00',null,'http://www.thejowetts.com','company notes4'),
+(null,'Partnership','4726 - 11th Ave. N.E.','Seattle','WA','001051082','2065551189','345678.00',null,'http://www.qualityinstruction.com','company notes5');
+SHOW WARNINGS;
