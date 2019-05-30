@@ -1,0 +1,30 @@
+Database Requests - a single SQL statement in an application program or transaction
+COMMIT: used to end transaction
+
+transaction log is a pointer that points to the previous or next transaction
+when power returns, pointer will go back to the previous or next transaction log entries
+
+deadlock: when two or more transactions wait for each other to unlock data
+
+do a .zip installation whenever possible, .msi will put key value pairs in registry
+mac users get .dmg
+
+Windows: echo %windir%
+Mac: /usr/local/mysql
+
+Default port for MySQL: 3306
+
+Fresh installations of mysql:
+user - root
+pass - *none*
+
+Grant privleges:
+* Principle of Least Privleges
+don't let them have % sign (anywhere in world)
+only localhost
+yourdatabase.*
+db.table
+* MySQL DB:
+two tables to focus on
+user and db
+user ->
